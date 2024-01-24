@@ -1,6 +1,6 @@
 name = "S2OCT"
 uuid = "66f729a7-8539-475b-8194-85a56a9a6c42"
-authors = ["mariaepinheiro <pinheiro@uni-trier.de\ngit config --global user.email pinheiro@uni-trier.de\ngit config --global user.email pinheiro@uni-trier.de>"]
+authors = ["Maria Eduarda Pinheiro pinheiro@uni-trier.de"]
 version = "0.1.0"
 
 [deps]
