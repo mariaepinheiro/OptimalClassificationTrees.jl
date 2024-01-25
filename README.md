@@ -5,7 +5,7 @@ This package provides the semi-supervised decision tree proposed in [Mixed-Integ
 It also provides the optimal classification tree proposed in [Optimal Classification Trees](https://link.springer.com/article/10.1007/s10994-017-5633-9) proposed by   Dimitris Bertsimas and Jack Dunn.
 
 
-#Take a very simple example
+## Take a very simple example
 
 - Xl= [0.636331    0.409577   0.0343776  0.49033   0.941649
  0.0988082   0.63994    0.841382   0.421412  0.235375
