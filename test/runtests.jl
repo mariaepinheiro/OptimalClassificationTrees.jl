@@ -52,6 +52,10 @@ maxtime = 3600
 Nmin = 1
 
 out1 =  S2OCT(Xl,Xu,ma,τ,D,C,M,maxtime,s,solver)
-
 out2 = OCTH(Xl,pos,D,α,Nmin, maxtime,solver)
+x = Xu[1,:]
+
+out1a = predictionS2OCT(x,out1[1],out1[2],D)
+
+out2a = predictioOCTH(x,out2[1],out2[2],out2[3],D)
 
