@@ -10,7 +10,7 @@ export predictionS2OCT
 
 ##S2OCT return 2^D -1 hyperplanes, the objective function and the classification of the unlabeled data in the following order:
 # ω = [ω¹ ... ω^{2^D -1)}] with  ω^i ∈ R^n
-# b = [b1 .... b_{2^D -1)}] with b_i ∈ R.
+# γ = [γ1 .... γ_{2^D -1)}] with γ_i ∈ R.
 # fun = objective function value
 # labelclass = class of the unlabeled data
 
