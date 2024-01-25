@@ -8,7 +8,11 @@ export predictionS2OCT
 
 ##S2OCT is a semi-supervised classification tree proposed by Jan Pablo Burgard, Maria Eduarda Pinheiro, Martin Schmidt avaliable in https://arxiv.org/abs/2401.09848
 
-##S2OCT return the hyperplanes, the objective function and the classification of the unlabeled data
+##S2OCT return 2^D -1 hyperplanes, the objective function and the classification of the unlabeled data in the following order:
+# ω = [ω¹ ... ω^{2^D -1)}] with  ω^i ∈ R^n
+# b = [b1 .... b_{2^D -1)}] with b_i ∈ R.
+# fun = objective function value
+# labelclass = class of the unlabeled data
 
 ## arguments:
 #Xl: Labeled points such that the first ma points belong to class A,
@@ -111,6 +115,15 @@ end
 #solver_ By default we use solver=1, which means we are using Gurobi. For that it is necessary a Gurobi license. If choose any different value, SCIP is used.
 
 
+##OCT-H is an optimal classification tree proposed by  Dimitris Bertsimas and Jack Dunn. available in https://link.springer.com/article/10.1007/s10994-017-5633-9 
+
+
+##OCT-H returns 2^D -1 hyperplanes, the objective function:
+# a = [a¹ ... a^{2^D -1)}] with  a^i ∈ R^n
+# b = [b1 .... b_{2^D -1)}] with b_i ∈ R.
+# c = [c_1 ... c_TL]: label of each leaf node t ∈ [1,TL]
+# fun = objective function value
+
 function OCTH(X,pos,D,α,Nmin, maxtime,solver=1) ###x∈[0,1]
     n,p = size(X)
     TB = 2^D-1
@@ -171,8 +184,8 @@ function OCTH(X,pos,D,α,Nmin, maxtime,solver=1) ###x∈[0,1]
     @objective(model, Min, (1/hat_L)*sum(L) + α*sum(s))
     print(model)
     optimize!(model)
-    a,b,c,z,fun= value.(a), value.(b), value.(c),value.(z),objective_value(model)
-    return a,b,c,z,fun
+    a,b,c,fun= value.(a), value.(b), value.(c),objective_value(model)
+    return a,b,c,fun
 end
 
 function predictioOCTH(x,a,b,c,D)
