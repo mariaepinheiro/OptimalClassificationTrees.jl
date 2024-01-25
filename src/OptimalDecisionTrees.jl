@@ -1,4 +1,4 @@
-module OptimalDecisionTree
+module OptimalDecisionTrees
 
 using Gurobi, JuMP, LinearAlgebra, SCIP
 export S2OCT
@@ -16,7 +16,7 @@ export predictionS2OCT
 ## all points belong to R^p
 #ma: number of labeled points that belong to class A,
 #τ: how many unlabeled points belong to class A,
-#D: deepth of the tree: integer number between 2 and 5
+#D: depth of the tree: integer number between 2 and 5
 #C: penalty parameter:  number between 0.5 and 2.
 #M: Big M value: η*s*\sqrt{p}+1 where η is the maximum distance between two points in [Xl Xu]
 #maxtime: time limit,
@@ -104,7 +104,7 @@ end
 ## arguments:
 #X: Labeled points such that the first pos points belong to class A,
 #pos number of labeled points that belong to class A,
-#D: deepth of the tree: integer number between 2 and 5
+#D: depth of the tree: integer number between 2 and 5
 #α:, . The tradeoff between accuracy and complexity of the tree. Number between 0 and 1
 #Nmin: Minimum number of points required in any leaf node,
 #maxtime: time limit,
