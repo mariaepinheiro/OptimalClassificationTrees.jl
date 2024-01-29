@@ -26,6 +26,7 @@ export predictionS2OCT
 #maxtime: time limit,
 #s: bound of ω.
 #solver_ By default we use solver=1, which means we are using Gurobi. For that it is necessary a Gurobi license. If choose any different value, SCIP is used.
+#Without further tuning, SCIP is very much slower on this problem than Gurobi.
 function S2OCT(Xl,Xu,ma,τ,D,C,M,maxtime,s,solver=1)
     ρ = 2^D -1
     p1 = 2^D
